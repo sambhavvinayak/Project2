@@ -116,10 +116,15 @@ public class GamePlay extends JPanel implements ActionListener , KeyListener{
                 ballXdir = -ballXdir;
 
             }
-            if (ballposY>=670) {
+            
+            Rectangle ballrect = new Rectangle(ballposX,ballposY,20,20);
+            Rectangle paddlerect = new Rectangle(playerX,550,100,8);
+
+            if (ballrect.intersects(paddlerect)) {
                 ballYdir = -ballYdir;
 
             }
+
             
             if (ballposY<=0) {
                 ballYdir = -ballYdir;
